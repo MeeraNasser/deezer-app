@@ -4,22 +4,22 @@ import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchGenres } from "../actions/fetchGenres";
+import { toggleModalArtists } from "../actions/toggleModalArtists";
 
 const mapStateToProps = (state) => ({
     musicGenresList: state.musicGenresList,
+    modalOpen: state.modalOpen
 });
 
 const mapDispatchToProps = {
     fetchGenres,
+    toggleModalArtists,
 };
 
 class MusicGenres extends Component {
     constructor(props) {
         super(props);
         props.fetchGenres();
-        this.state = {
-            modalOpen : false
-        }
     }
 
     showArtists = () =>  {
@@ -41,13 +41,14 @@ class MusicGenres extends Component {
                             <div>
                                 <span>{item.name}</span>
                             </div>
-                            <NavLink exact to={`/music-genres/${item.id}`}>
-                                <button onClick={() => {this.setState({modalOpen:true})}} >show artists</button>
-                            </NavLink>
+                            {/* <NavLink exact to={`/music-genres/${item.id}`}> */}
+                                <button onClick={this.props.toggleModalArtists} >show artists</button>
+                            {/* </NavLink> */}
+
                             <Route exact path="/music-genres/:id"
                             children={({ match }) => {
                                 return (
-                                    <ArtistsModal open={this.state.modalOpen} id={match && match.params.id}/>
+                            <ArtistsModal open={this.props.modalOpen} id={match && match.params.id}/>
                                 );
                             }}
                             />

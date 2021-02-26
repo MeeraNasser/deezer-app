@@ -35,7 +35,7 @@ const GenreArtistsList = (props) => {
 };
 
 GenreArtistsList.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.any,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GenreArtistsList);
