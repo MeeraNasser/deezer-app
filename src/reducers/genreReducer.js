@@ -6,7 +6,7 @@ import {
 const INITIAL_STATE = {
     musicGenresList: [],
     genreArtists: [],
-    modalOpen: false
+    // modalOpen: false
 };
 
 const GenreReducer =  (state = INITIAL_STATE, action) => {
@@ -23,11 +23,11 @@ const GenreReducer =  (state = INITIAL_STATE, action) => {
                 genreArtists: action.payload,
             };
 
-        case TOGGLE_MODAL_ARTISTS:
-            return {
-                ...state,
-                modalOpen: true,
-            };
+        // case TOGGLE_MODAL_ARTISTS:
+        //     return {
+        //         ...state,
+        //         modalOpen: true,
+        //     };
     
         default:
             return {

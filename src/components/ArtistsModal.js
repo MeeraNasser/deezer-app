@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button, Header, Modal } from 'semantic-ui-react'
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 import PropTypes from "prop-types";
 import GenreArtistsList from './GenreArtistsList';
 import { history } from "./../history";
 
 function ArtistsModal(props) {
-  const [setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false)
+
   return (
     <Modal
       onClose={() => setOpen(false)}
@@ -20,9 +21,6 @@ function ArtistsModal(props) {
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-      {/* <NavLink exact to={`/music-genres/${item.id}`}>
-                                <button onClick={this.showArtists} >show artists</button>
-                            </NavLink> */}
         <Button color='black' onClick={() => history.goBack()}>
           Close
         </Button>
