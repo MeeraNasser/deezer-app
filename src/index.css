@@ -55,7 +55,7 @@ code {
   margin-left: 6%;
 }
 
-.genre-details button{
+.genre-details a{
   background-color: #38bb92;
   color: #fff;
   cursor: pointer;
@@ -125,4 +125,17 @@ code {
 
 .dimmed.dimmable > .ui.modals.dimmer.visible {
   display: flex !important;
+}
+
+.ui.items {
+  background: linear-gradient(45deg,#543cd0 0,#ae459c 99%);
+}
+
+.ui.items > .item{
+  margin-left: 3% !important;
+  padding-top: 3% !important;
+}
+
+.ui.items>.item>.image {
+  width: 15%;
 }

@@ -6,12 +6,10 @@ import {
 import { BASE_URL, DEEZER_API} from '../APIUrls';
 import axios from 'axios';
 
-export const fetchGenreArtists = () => async (dispatch) => {
+export const fetchGenreArtists = (id) => async (dispatch) => {
     dispatch({ type: FETCH_GENRE_ARTISTS_BEGIN });
-
-    await axios.get(`${BASE_URL}${DEEZER_API}/${this.props.id}/artists`)
+    await axios.get(`${BASE_URL}${DEEZER_API}/${id}/artists`)
     .then((response) => {
-        console.log("Afteeer",response);
         dispatch({
             type: FETCH_GENRE_ARTISTS_SUCCESS,
             payload: response.data.data,

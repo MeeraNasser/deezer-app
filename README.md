@@ -29,10 +29,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 > npm test
 
- ## .ENV FILE
+ ## NOTE .. To avoid problem of CORS 
 
-.env file should conatin the following data:
+visit this link and cick on request temporary access to the demo serve button
 
-> BASE_URL=http://localhost:3000	
+> https://cors-anywhere.herokuapp.com/corsdemo
 
-> PORT = 3000

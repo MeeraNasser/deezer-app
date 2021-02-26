@@ -7,7 +7,6 @@ import "semantic-ui-css/semantic.min.css";
 import { createStore, applyMiddleware } from 'redux';
 import GenreReducer from './reducers/genreReducer';
 import {Provider} from 'react-redux';
-// import 'bootstrap/dist/css/bootstrap.css';
 import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
 

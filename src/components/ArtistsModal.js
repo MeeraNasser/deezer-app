@@ -1,22 +1,21 @@
 import React from 'react'
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Modal } from 'semantic-ui-react'
 import PropTypes from "prop-types";
 import GenreArtistsList from './GenreArtistsList';
 import { history } from "./../history";
 
 function ArtistsModal(props) {
-  const [open, setOpen] = React.useState(false)
-
+  const [open, setOpen] = React.useState(true)
   return (
     <Modal
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      open={props.open}
+      open={open}
     >
       <Modal.Header>Genre Artists List</Modal.Header>
       <Modal.Content scrolling image>
         <Modal.Description>
-          <Header>Hello There</Header>
+          <Header>Enjoy with Your Favourite Artists </Header>
           <GenreArtistsList id={props.id}/>
         </Modal.Description>
       </Modal.Content>
@@ -31,7 +30,7 @@ function ArtistsModal(props) {
 
 ArtistsModal.propTypes = {
   open: PropTypes.bool.isRequired,
-  id: PropTypes.string,
+  id: PropTypes.any,
 };
 
 export default ArtistsModal

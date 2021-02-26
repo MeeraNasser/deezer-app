@@ -11,8 +11,8 @@ const NavbarLight = () => {
   return (
     <Navbar expandSm light>
       <Nav start="true">
-      <NavLink exact to="/">
-        <NavbarLink light brand href="/"><img alt="BRAND" className="logo" src={Logo}/></NavbarLink>
+      <NavLink exact to="/" light="true" brand="true">
+        <img alt="BRAND" className="logo" src={Logo}/>
       </NavLink>
         <Nav end="true">
           <Button
