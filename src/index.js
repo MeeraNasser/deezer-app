@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "semantic-ui-css/semantic.min.css";
+import { createStore, applyMiddleware } from 'redux';
+import GenreReducer from './reducers/genreReducer';
+import {Provider} from 'react-redux';
+// import 'bootstrap/dist/css/bootstrap.css';
+import { composeWithDevTools } from "redux-devtools-extension";
+import ReduxThunk from "redux-thunk";
 
-ReactDOM.render(
-  
-    <App />
-  ,
+const store = createStore(GenreReducer, composeWithDevTools(applyMiddleware(ReduxThunk)));
+
+ReactDOM.render(<Provider store={store}> <App /></Provider>,
   document.getElementById('root')
 );
 

@@ -11,7 +11,9 @@ const NavbarLight = () => {
   return (
     <Navbar expandSm light>
       <Nav start="true">
-        <NavbarLink light brand href="#"><img alt="BRAND" className="logo" src={Logo}/></NavbarLink>
+      <NavLink exact to="/">
+        <NavbarLink light brand href="/"><img alt="BRAND" className="logo" src={Logo}/></NavbarLink>
+      </NavLink>
         <Nav end="true">
           <Button
             light
@@ -31,7 +33,7 @@ const NavbarLight = () => {
           <NavLink to="/about">
             <NavbarLink light >About</NavbarLink>
           </NavLink>
-          <NavLink to="/music-genres">
+          <NavLink exact to="/music-genres">
             <NavbarLink light >Music Genres</NavbarLink>
           </NavLink>
       </Nav>

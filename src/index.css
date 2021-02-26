@@ -89,8 +89,21 @@ code {
   font-size: 100px;
   padding: 35.5px 0;
   width: 100%;
-  float: left;
   color: white;
+  height: 564px;
+}
+
+.home h1 {
+  font-size: 260px;
+  font-weight: bolder;
+}
+
+.about{
+  background: linear-gradient(45deg,#543cd0 0,#ae459c 99%);
+}
+
+.about img {
+  width: 75%;
 }
 
 .NavLink{

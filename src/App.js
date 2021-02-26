@@ -12,7 +12,7 @@ function App() {
         <Nav />
         <Route path="/" exact component = {Home}/>
         <Route path="/about" component = {About}/>
-        <Route path="/music-genres" component = {MusicGenres}/>
+        <Route path="/music-genres" exact component = {MusicGenres}/>
       </div>
     </BrowserRouter>
   );

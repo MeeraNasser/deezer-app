@@ -1,50 +1,31 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import MyModal from './ArtistsPopupModal';
+import ArtistsModal from './ArtistsModal';
+import { NavLink } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { connect } from "react-redux";
+import { fetchGenres } from "../actions/fetchGenres";
+import { toggleModalAtists } from "../actions/toggleModalArtists";
+
+const mapStateToProps = (state) => ({
+    musicGenresList: state.musicGenresList,
+    modalOpen: state.modalOpen
+});
+
+const mapDispatchToProps = {
+    fetchGenres,
+    toggleModalAtists
+};
 
 class MusicGenres extends Component {
     constructor(props) {
         super(props);
-    
-        this.state = {
-          MusicGenresList : [],
-          modalOpen: true,
-          valueIntoModal: "123456abcdef"
-        }
-    }
-
-    BASE_URL = 'https://cors-anywhere.herokuapp.com/';
-    DEEZER_API = 'https://api.deezer.com/genre';
-    componentDidMount(){
-        axios.get(`${this.BASE_URL}${this.DEEZER_API}`)
-        .then(res => {
-            this.setState({
-                MusicGenresList : res.data.data
-            })
-        })
-    }
-
-    showArtists(){
-        <MyModal 
-        modalOpen={this.state.modalOpen}
-        handleClose={
-            () => {
-            this.setState({ modalOpen: false })
-            }
-        }
-        valueIntoModal={this.state.valueIntoModal}
-        />
-        // axios.get(`${this.BASE_URL}${this.DEEZER_API}${id}/artists`)
-        // .then(res => {
-        //     console.log("Heeeey1111",res);
-        // })
-
-            // this.setState({ modalOpen: true }) }
+        props.fetchGenres();
+        this.state = props
     }
 
     render(){
-        const {MusicGenresList} = this.state;
-        const items = MusicGenresList.map(item => {
+        const {musicGenresList} = this.props;
+        const items = musicGenresList.map(item => {
             return (
                 <div className="wrapper" key={item.id}>
                     <div className="row">
@@ -55,7 +36,16 @@ class MusicGenres extends Component {
                             <div>
                                 <span>{item.name}</span>
                             </div>
-                            <button primary="true" content='Click!' onClick={this.showArtists} >show artists</button>
+                            <NavLink exact to={`/music-genres/${item.id}`}>
+                                <button onClick={this.props.toggleModalAtists} >show artists</button>
+                            </NavLink>
+                            <Route exact path="/music-genres/:id"
+                            children={({ match }) => {
+                                return (
+                                    <ArtistsModal open={this.props.modalOpen} id={match && match.params.id}/>
+                                );
+                            }}
+                            />
                         </div>
                     </div>
                 </div>
@@ -69,4 +59,4 @@ class MusicGenres extends Component {
     }
 }
 
-export default MusicGenres;
+export default connect(mapStateToProps, mapDispatchToProps)(MusicGenres);

@@ -1,9 +1,10 @@
 import React from 'react';
+import about from '../images/about.png';
 
 const About = () => {
     return (
-        <div>
-            about
+        <div className="about">
+            <img alt="About" src={about}/>
         </div>
     )
 }
