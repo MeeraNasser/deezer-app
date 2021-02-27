@@ -9,7 +9,7 @@ import axios from 'axios';
 export const fetchGenres = () => async (dispatch) => {
     dispatch({ type: FETCH_GENRES_BEGIN });
 
-    await axios.get(`${BASE_URL}${DEEZER_API}`)
+    await axios.get(`${BASE_URL}${DEEZER_API}/genre`)
     .then((response) => {
         dispatch({
             type: FETCH_GENRES_SUCCESS,

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 export const fetchGenreArtists = (id) => async (dispatch) => {
     dispatch({ type: FETCH_GENRE_ARTISTS_BEGIN });
-    await axios.get(`${BASE_URL}${DEEZER_API}/${id}/artists`)
+    await axios.get(`${BASE_URL}${DEEZER_API}/genre/${id}/artists`)
     .then((response) => {
         dispatch({
             type: FETCH_GENRE_ARTISTS_SUCCESS,

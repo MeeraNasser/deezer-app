@@ -1,10 +1,10 @@
-import './App.css';
-import MusicGenres from './components/MusicGenres';
-import Nav from './components/Nav';
+import '../style.css';
+import MusicGenres from './MusicGenres';
+import Nav from './Nav';
 import {BrowserRouter as Router, Route, Switch, useLocation} from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import ArtistsModal from './components/ArtistsModal';
+import Home from './Home';
+import About from './About';
+import ArtistsModal from './ArtistsModal';
 
 function App() {
   return (

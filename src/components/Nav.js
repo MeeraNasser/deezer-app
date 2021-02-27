@@ -4,6 +4,7 @@ import { Navbar, NavbarLink } from 'styled-navbar-component';
 import { Nav } from 'styled-nav-component';
 import { NavLink } from 'react-router-dom';
 import Logo from '../images/logo.png'
+import Deezer from '../images/deezer.png'
 
 const NavbarLight = () => {
   const [hidden, setHidden] = useState(true);
@@ -36,6 +37,14 @@ const NavbarLight = () => {
           <NavLink exact to="/music-genres">
             <NavbarLink light >Music Genres</NavbarLink>
           </NavLink>
+      </Nav>
+      <Nav>
+        {/* eslint-disable-next-line */}
+        <NavLink className="deezer-icon" target="blank" to={{ pathname: "https://www.deezer.com/en/?utm_campaign=crm&utm_source=crm&utm_medium=obj_stream&utm_content=email-logo" }} target="_blank">
+          <div>
+            <img alt="deezer" className="logo" src={Deezer}/><span>Let’s dive right in!</span>
+          </div> 
+        </NavLink>
       </Nav>
     </Navbar>
   );

@@ -40,7 +40,7 @@ const MusicGenres = (props) => {
                             <span>{item.name}</span>
                         </div>
                         <NavLink onClick={()=>showArtists} exact to={{pathname:`/music-genres/${item.id}`,state:{modalIsOpen:location, id:item.id}}}>
-                            Show Artits
+                            Show Artists
                         </NavLink>
                     </div>
                 </div>
