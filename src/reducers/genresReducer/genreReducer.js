@@ -1,7 +1,7 @@
 import {
     FETCH_GENRES_SUCCESS,
     FETCH_GENRE_ARTISTS_SUCCESS, TOGGLE_MODAL_ARTISTS
-} from "../reducers/constants";
+} from "../constants";
 
 const INITIAL_STATE = {
     musicGenresList: [],

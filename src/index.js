@@ -5,7 +5,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import "semantic-ui-css/semantic.min.css";
 import { createStore, applyMiddleware } from 'redux';
-import GenreReducer from './reducers/genreReducer';
+import GenreReducer from './reducers/genresReducer/genreReducer';
 import {Provider} from 'react-redux';
 import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
