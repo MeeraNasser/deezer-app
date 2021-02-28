@@ -1,10 +1,14 @@
-import '../style.css';
-import MusicGenres from './MusicGenres';
-import Nav from './Nav';
 import {BrowserRouter as Router, Route, Switch, useLocation} from 'react-router-dom';
-import Home from './Home';
-import About from './About';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import React from 'react';
+import Nav from './Nav';
 import ArtistsModal from './ArtistsModal';
+import MusicGenres from './MusicGenres';
+import useToken from './useToken';
+import Login from './Login';
+import About from './About';
+import Home from './Home';
+import '../style.css';
 
 function App() {
   return (
@@ -16,6 +20,11 @@ function App() {
 
 function Routes() {
 const location = useLocation();
+const { token, setToken } = useToken();
+
+if(!token) {
+  return <Login setToken={setToken} />
+}
 
 let isModalopen = location.state && location.state.modalIsOpen;
 let genreID = location.state && location.state.id;
