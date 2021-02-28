@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { connect } from "react-redux";
-import { fetchGenres } from "../actions/fetchGenres";
-import { toggleModalArtists } from "../actions/toggleModalArtists";
+import { fetchGenres } from "../../actions/fetchGenres";
+import { toggleModalArtists } from "../../actions/toggleModalArtists";
 
 const mapStateToProps = (state) => ({
     musicGenresList: state.musicGenresList,

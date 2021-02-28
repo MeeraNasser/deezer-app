@@ -1,33 +1,20 @@
-import React, { useState } from 'react';
-import { Button } from 'styled-button-component';
+import React from 'react';
 import { Navbar, NavbarLink } from 'styled-navbar-component';
 import { Nav } from 'styled-nav-component';
 import { NavLink } from 'react-router-dom';
 import Logo from '../images/logo.png'
 import Deezer from '../images/deezer.png'
+import Logout from './UserAuthentication/Logout';
 
 const NavbarLight = () => {
-  const [hidden, setHidden] = useState(true);
- 
   return (
     <Navbar expandSm light>
       <Nav start="true">
-      <NavLink exact to="/" light="true" brand="true">
-        <img alt="BRAND" className="logo" src={Logo}/>
-      </NavLink>
-        <Nav end="true">
-          <Button
-            light
-            outline
-            toggleCollapse
-            expandSm
-            onClick={() => setHidden(!hidden)}
-          >
-            <span>&#9776;</span>
-          </Button>
-        </Nav>
+        <NavLink exact to="/" light="true" brand="true">
+          <img alt="BRAND" className="logo" src={Logo}/>
+        </NavLink>
       </Nav>
-      <Nav start="true" collapse expandSm hidden={hidden}>
+      <Nav start="true" collapse expandSm>
           <NavLink exact to="/">
             <NavbarLink light >Home</NavbarLink>
           </NavLink>
@@ -38,12 +25,17 @@ const NavbarLight = () => {
             <NavbarLink light >Music Genres</NavbarLink>
           </NavLink>
       </Nav>
-      <Nav>
+      <Nav className="deezer-icon">
         {/* eslint-disable-next-line */}
-        <NavLink className="deezer-icon" target="blank" to={{ pathname: "https://www.deezer.com/en/?utm_campaign=crm&utm_source=crm&utm_medium=obj_stream&utm_content=email-logo" }} target="_blank">
+        <NavLink target="blank" to={{ pathname: "https://www.deezer.com/en/?utm_campaign=crm&utm_source=crm&utm_medium=obj_stream&utm_content=email-logo" }} target="_blank">
           <div>
             <img alt="deezer" className="logo" src={Deezer}/><span>Let’s dive right in!</span>
           </div> 
+        </NavLink>
+      </Nav>
+      <Nav start="true">
+        <NavLink to="/">
+          <Logout/>
         </NavLink>
       </Nav>
     </Navbar>

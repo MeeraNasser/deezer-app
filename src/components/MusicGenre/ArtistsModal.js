@@ -2,9 +2,9 @@ import React from 'react'
 import { Button, Header, Modal } from 'semantic-ui-react'
 import PropTypes from "prop-types";
 import GenreArtistsList from './GenreArtistsList';
-import { history } from "./../history";
-import Dance from '../images/dance.svg'
-import deezerIcon from '../images/deezer-icon.png'
+import { history } from "./../../history";
+import Dance from '../../images/dance.svg'
+import deezerIcon from '../../images/deezer-icon.png'
 
 function ArtistsModal(props) {
   const [open, setOpen] = React.useState(true)

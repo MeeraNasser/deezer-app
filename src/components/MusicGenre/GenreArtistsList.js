@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Item } from "semantic-ui-react";
-import { fetchGenreArtists } from "../actions/fetchGenreArtists";
+import { fetchGenreArtists } from "../../actions/fetchGenreArtists";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => ({
