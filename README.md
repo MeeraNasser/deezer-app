@@ -23,7 +23,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Deployed version on heroku
 
 You can visit deployed version on Heroku
-https://deezer-react-app.herokuapp.com/
+https://deezer-react-redux-app.herokuapp.com
 
 ## Getting started
 
